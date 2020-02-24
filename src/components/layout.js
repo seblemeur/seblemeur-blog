@@ -11,7 +11,7 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h1
         style={{
-          ...scale(1.5),
+          fontSize: '20px',
           marginBottom: rhythm(1.5),
           marginTop: 0,
         }}
@@ -60,10 +60,14 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <footer
+        style={{
+          marginTop: `100px`,
+        }}>
+        <hr />
+        © {new Date().getFullYear()}, built with GatsbyJS
+        {`, follow me `}
+        <a href="https://twitter/seblemeur">on twitter</a>
       </footer>
     </div>
   )
