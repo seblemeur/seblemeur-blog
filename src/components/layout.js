@@ -37,10 +37,7 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer
-        style={{
-          marginTop: `100px`,
-        }}>
+      <footer>
         <hr />
         © {new Date().getFullYear()}, built with GatsbyJS
         {`, follow me `}
