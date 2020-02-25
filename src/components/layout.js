@@ -41,7 +41,7 @@ const Layout = ({ location, title, children }) => {
         <hr />
         © {new Date().getFullYear()}, built with GatsbyJS
         {`, follow me `}
-        <a href="https://twitter/seblemeur">on twitter</a>
+        <a href="https://twitter.com/seblemeur">on twitter</a>
       </footer>
     </div>
   )
