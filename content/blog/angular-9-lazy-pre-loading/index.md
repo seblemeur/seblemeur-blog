@@ -4,7 +4,7 @@ date: "2020-03-17T18:30:00.284Z"
 description: "Implement lazy loading and pre loading in Angular"
 ---
 
-Lazy loading is a very useful (large application with many routes for example) but sometimes you need to preload somes modules.
+Lazy loading is very useful for large application with many routes for example, but sometimes you need to preload somes modules.
 
 ## Setup your new angular application
 
