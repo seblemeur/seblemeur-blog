@@ -8,7 +8,7 @@ const Layout = ({ location, title, children }) => {
   let header = (
     <h1
       style={{
-        fontSize: '30px',
+        fontSize: '50px',
         marginBottom: rhythm(1.5),
         marginTop: 0,
       }}
