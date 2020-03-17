@@ -97,6 +97,9 @@ export class MyPreloadingStrategyService implements PreloadingStrategy {
 
 }
 ```
+
+## Set Up the preload service for preloading strategy
+
 And finally, we need to set the preload service we created above as the preloading strategy. First you need to MyPreloadingStrategyService in param of preloadingStrategy and add in providers our new service MyPreloadingStrategyService.
 
 ```javascript
