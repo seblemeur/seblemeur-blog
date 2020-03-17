@@ -6,7 +6,7 @@ description: "Implement lazy loading and pre loading in Angular"
 
 Lazy loading is a very useful (large application with many routes for example) but sometimes you need to preload somes modules.
 
-# Setup your new angular application
+## Setup your new angular application
 
 First create your new project (Write yes for adding Angular routing)
 ```
@@ -19,7 +19,7 @@ Go to the root folder of the app
 cd myapp
 ```
 
-# Create two modules, one for lazy loading, and one for pre loading
+## Create two modules, one for lazy loading, and one for pre loading
 
 Lazy loading module :
 
@@ -33,7 +33,7 @@ Pre loading module :
 ng generate module preloadingmodule --route preload --module app.module
 ```
 
-## app-routing.module.ts
+### app-routing.module.ts
 
 As you can see, the file app-routing.module.ts is now updated with :
 
@@ -113,7 +113,7 @@ And finally, we need to set the preload service we created above as the preloadi
 export class AppRoutingModule { }
 ```
 
-# Set Up the Interface
+## Set Up the Interface
 
 We will create a list of modules in app.component.html with hyperlinks to link to each component.
 
@@ -132,7 +132,7 @@ We will create a list of modules in app.component.html with hyperlinks to link t
 ```
 
 
-# The result 
+## The result 
 
 Start your server with 
 
@@ -153,7 +153,7 @@ And when you navigate to lazy module, the file *lazyloadingmodule-lazyloadingmod
 
 [lazyloadingmodule]: lazy-loading-module.png
 
-# Resources
+## Resources
 
 - https://levelup.gitconnected.com/a-guide-to-lazy-loading-modules-in-angular-15925dfbfd7f
 
