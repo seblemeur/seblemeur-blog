@@ -8,15 +8,10 @@ Lazy loading is a very useful (large application with many routes for example) b
 
 # Setup your new angular application
 
-First create your new project
+First create your new project (Write yes for adding Angular routing)
 ```
 ng new myapp
 ```
-Write yes for adding Angular routing
-
-![alt text][logo]
-
-[logo]: ng-new-routing.png
 
 Go to the root folder of the app
 
