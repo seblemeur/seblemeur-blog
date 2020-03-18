@@ -4,6 +4,9 @@ date: "2020-03-17T18:30:00.284Z"
 description: "Implement lazy loading and pre loading in Angular"
 ---
 
+![alt text](thumbnail.jpg)
+
+
 Lazy loading is very useful for large application with many routes for example, but sometimes you need to preload somes modules.
 
 ## Setup your new angular application
@@ -161,3 +164,5 @@ And when you navigate to lazy module, the file *lazyloadingmodule-lazyloadingmod
 - https://levelup.gitconnected.com/a-guide-to-lazy-loading-modules-in-angular-15925dfbfd7f
 
 - https://dev.to/mainawycliffe/lazy-loading-modules-preloading-strategy-in-angular-8-2d6o
+
+- Photo by Kari Shea on [Unsplash](https://unsplash.com/photos/eMzblc6JmXM)
