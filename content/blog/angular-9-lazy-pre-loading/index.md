@@ -1,11 +1,9 @@
 ---
 title: Angular 9 lazy and pre loading
+featuredImage: "./angular-lazy-and-pre-loading.jpg"
 date: "2020-03-17T18:30:00.284Z"
 description: "Implement lazy loading and pre loading in Angular"
 ---
-
-![alt text](thumbnail.jpg)
-
 
 Lazy loading is very useful for large application with many routes for example, but sometimes you need to preload somes modules.
 
@@ -148,14 +146,14 @@ ng serve
 
 Here is the result when you load at first time your app, only pre loading module is added :  *preloadingmodule-preloadingmodule-module.js*
 
-![alt text][preloadingmodule]
+![Pre loading module is added][preloadingmodule]
 
 [preloadingmodule]: pre-loading-module.png
 
 
 And when you navigate to lazy module, the file *lazyloadingmodule-lazyloadingmodule-module.js* is added :
 
-![alt text][lazyloadingmodule]
+![Lazy loading module is added][lazyloadingmodule]
 
 [lazyloadingmodule]: lazy-loading-module.png
 
