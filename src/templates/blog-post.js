@@ -24,7 +24,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <h1
             style={{
               marginTop: rhythm(1),
-              fontSize: '24px',
+              fontSize: "24px",
               marginBottom: 0,
             }}
           >
@@ -43,7 +43,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <div className="markdown-body">
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
-
       </article>
 
       <nav>
