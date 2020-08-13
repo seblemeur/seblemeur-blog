@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import kebabCase from "lodash/kebabCase"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -9,6 +10,7 @@ import { rhythm } from "../utils/typography"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
+  const tags = data.allMarkdownRemark.group
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -16,9 +18,22 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
       <div
         style={{
-          marginTop: '40px',
-          marginBottom: '40px'
-        }}>
+          marginTop: "40px",
+          marginBottom: "40px",
+        }}
+      >
+        <div className="tags-list">
+          Categories :
+          {tags.map((tag, i, arr) => (
+            <span className="tags-list-one" key={tag.fieldValue}>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+              {arr.length - 1 === i ? "" : ", "}
+            </span>
+          ))}
+        </div>
+
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -72,6 +87,10 @@ export const pageQuery = graphql`
             description
           }
         }
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }

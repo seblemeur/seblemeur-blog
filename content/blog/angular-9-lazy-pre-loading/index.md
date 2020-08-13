@@ -3,6 +3,7 @@ title: Angular 9 lazy and pre loading
 featuredImage: "./angular-lazy-and-pre-loading.jpg"
 date: "2020-03-17T18:30:00.284Z"
 description: "Implement lazy loading and pre loading in Angular"
+tags: ["angular"]
 ---
 
 Lazy loading is very useful for large application with many routes for example, but sometimes you need to preload somes modules.
@@ -10,6 +11,7 @@ Lazy loading is very useful for large application with many routes for example, 
 ## Setup your new angular application
 
 First create your new project (Write yes for adding Angular routing)
+
 ```
 ng new myapp
 ```
@@ -39,26 +41,31 @@ ng generate module preloadingmodule --route preload --module app.module
 As you can see, the file app-routing.module.ts is now updated with :
 
 ```javascript
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { NgModule } from "@angular/core"
+import { Routes, RouterModule } from "@angular/router"
 
 const routes: Routes = [
   {
-    path: 'lazy',
-    loadChildren: () => import('./lazyloadingmodule/lazyloadingmodule.module').then(m => m.LazyloadingmoduleModule)
+    path: "lazy",
+    loadChildren: () =>
+      import("./lazyloadingmodule/lazyloadingmodule.module").then(
+        m => m.LazyloadingmoduleModule
+      ),
   },
   {
-    path: 'preload',
-    loadChildren: () => import('./preloadingmodule/preloadingmodule.module').then(m => m.PreloadingmoduleModule)
-  }
-];
+    path: "preload",
+    loadChildren: () =>
+      import("./preloadingmodule/preloadingmodule.module").then(
+        m => m.PreloadingmoduleModule
+      ),
+  },
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 ```
 
 The loadChildren property is used to specify the module that needs to be lazy-loaded when it is first navigated to.
@@ -83,19 +90,17 @@ And the loader function loads the lazy-loaded module asynchronously when called.
 Inside the preload function, we are going to check If the preload flag is set to true, and then return the loader function else we return a null observable.
 
 ```javascript
-import { PreloadingStrategy, Route } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { PreloadingStrategy, Route } from "@angular/router"
+import { Observable, of } from "rxjs"
 
 export class MyPreloadingStrategyService implements PreloadingStrategy {
-
-    preload(route: Route, load: () => Observable<any>): Observable<any> {
-        if (route.data && route.data['preload']) {
-            return load();
-        } else {
-            return of(null);
-        }
+  preload(route: Route, load: () => Observable<any>): Observable<any> {
+    if (route.data && route.data["preload"]) {
+      return load()
+    } else {
+      return of(null)
     }
-
+  }
 }
 ```
 
@@ -106,15 +111,14 @@ And finally, we need to set the preload service we created above as the preloadi
 ```javascript
 @NgModule({
   imports: [
-    RouterModule.forRoot(
-      routes,
-      { preloadingStrategy: MyPreloadingStrategyService }
-    )
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: MyPreloadingStrategyService,
+    }),
   ],
   exports: [RouterModule],
-  providers: [MyPreloadingStrategyService]
+  providers: [MyPreloadingStrategyService],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 ```
 
 ## Set Up the Interface
@@ -135,23 +139,21 @@ We will create a list of modules in app.component.html with hyperlinks to link t
 <router-outlet></router-outlet>
 ```
 
+## The result
 
-## The result 
-
-Start your server with 
+Start your server with
 
 ```
 ng serve
 ```
 
-Here is the result when you load at first time your app, only pre loading module is added :  *preloadingmodule-preloadingmodule-module.js*
+Here is the result when you load at first time your app, only pre loading module is added : _preloadingmodule-preloadingmodule-module.js_
 
 ![Pre loading module is added][preloadingmodule]
 
 [preloadingmodule]: pre-loading-module.png
 
-
-And when you navigate to lazy module, the file *lazyloadingmodule-lazyloadingmodule-module.js* is added :
+And when you navigate to lazy module, the file _lazyloadingmodule-lazyloadingmodule-module.js_ is added :
 
 ![Lazy loading module is added][lazyloadingmodule]
 
