@@ -1,5 +1,5 @@
 ---
-title: Install and start postgres on mac
+title: How to install and start postgres on mac
 featuredImage: "./postgres-baby.png"
 date: "2020-03-17T18:30:00.284Z"
 description: "Install and start postgres on mac"
