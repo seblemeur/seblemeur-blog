@@ -2,16 +2,12 @@ import React, { useEffect } from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import * as THREE from "three"
-import * as dat from "dat.gui"
 
 const ThreejsDonutsPage = ({ data, location }) => {
   const siteTitle = "Threejs donuts"
 
   useEffect(() => {
     const canvas = document.querySelector("canvas.webgl")
-    const gui = new dat.GUI()
-    console.log(gui)
-    console.log(canvas)
 
     const sizes = {
       width: 600,
