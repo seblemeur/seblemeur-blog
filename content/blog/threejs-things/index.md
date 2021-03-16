@@ -3,10 +3,8 @@ title: Threejs things
 featuredImage: "./threejs.png"
 date: "2021-03-10T23:10:00.284Z"
 description: "Threejs things"
-tags: ["threejs", "mac"]
+tags: ["threejs"]
 ---
-
-How to install and start postgres on mac, guidelines :
 
 # Helpers
 
