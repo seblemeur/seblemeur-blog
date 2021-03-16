@@ -46,15 +46,17 @@ const Bio = () => {
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
+          marginTop: 4,
           minWidth: 50,
-          borderRadius: `100%`,
+          borderRadius: `8px`,
         }}
         imgStyle={{
-          borderRadius: `50%`,
+          borderRadius: `8px`,
         }}
       />
       <p>
-        Written by <strong>{author}</strong> who lives and works in Nantes building useful things (react, angular, nestjs, postgresql).
+        Written by <strong>{author}</strong> who lives and works in Nantes
+        building useful things (react, angular, nestjs, postgresql).
       </p>
     </div>
   )
