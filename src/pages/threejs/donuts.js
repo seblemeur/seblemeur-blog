@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import DonutsCss from "../threejs/donuts.css"
+import "../threejs/donuts.css"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import * as THREE from "three"
 
