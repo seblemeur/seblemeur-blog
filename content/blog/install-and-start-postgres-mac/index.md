@@ -39,7 +39,12 @@ brew services stop postgresql
 ```
 
 
-## 3 : Create a new ROLE
+## 3 : Write postgres code from terminal
+```
+psql postgres
+```
+
+## 4 : Create a new ROLE
 
 ```
 CREATE ROLE name_of_your_role;
@@ -47,7 +52,7 @@ CREATE ROLE name_of_your_role;
 ```
 
 
-## 4 : Add rights to this new ROLE
+## 5 : Add rights to this new ROLE
 
 ```
 ALTER ROLE name_of_your_role with SUPERUSER CREATEDB;
@@ -55,10 +60,15 @@ ALTER ROLE name_of_your_role with SUPERUSER CREATEDB;
 List of all roles : https://www.postgresql.org/docs/9.0/sql-alterrole.html
 
 
-## 5 : Create database
+## 6 : Create database
 
 ```
 CREATE DATABASE name_of_your_database WITH OWNER name_of_your_role;
 ```
 
-Finished !
+## 6 : TIPS
+
+- List all ROLES `\du`
+- List all DATABASE `\l`
+- Never forget the ";"
+
